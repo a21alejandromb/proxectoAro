@@ -7,6 +7,11 @@ import java.text.DecimalFormat;
  * @author alex
  */
 public class Main {
+
+    /**
+     * Metodo executable que proba a clase aro con diferentes valores
+     * @param args
+     */
     public static void main(String[] args) {
         Aro circulo = new Aro(37,43,2.5);
         String saida =
