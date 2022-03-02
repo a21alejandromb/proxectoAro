@@ -2,7 +2,7 @@ package circulo;
 
 /**
  * Probas de refactorización en NetBeans coa clase Circulo
- * @author profesor
+ * @author alex
  */
 public class Circulo {
     public static final double MINIMO = 0.0;
