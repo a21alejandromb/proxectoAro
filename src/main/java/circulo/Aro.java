@@ -2,9 +2,25 @@ package circulo;
 
 /**
  * Probas de refactorización en NetBeans coa clase Aro
+ *
  * @author alex
  */
 public class Aro {
+
+    public static final double MINIMO = 0.0;
+
+    private int coordenadaX;
+    private int coordenadaY;
+    private double radio;
+
+    public Aro() {
+    }
+
+    public Aro(int valorX, int valorY, double valorRadio) {
+        coordenadaX = valorX;
+        coordenadaY = valorY;
+        setRadio(valorRadio);
+    }
 
     /**
      * @return the coordenadaX
@@ -42,51 +58,13 @@ public class Aro {
     }
 
     /**
-     * @param radio the radio to set
+     * @param valorRadio the radio to set
      */
-    public void setRadio(double radio) {
-        this.radio = radio;
-    }
-    public static final double MINIMO = 0.0;
+    public void setRadio(double valorRadio) {
 
-    private int coordenadaX;
-    private int coordenadaY;
-    private double radio;
-
-    public Aro() {
-    }
-
-    public Aro(int valorX, int valorY, double valorRadio) {
-        coordenadaX = valorX;
-        coordenadaY = valorY;
-        establecerRadio(valorRadio);
-    }
-
-    public void establecerX(int valorX) {
-        setCoordenadaX(valorX);
-    }
-
-    public int obterX() {
-        return getCoordenadaX();
-    }
-
-    public void establecerY(int valorY) {
-        setCoordenadaY(valorY);
-    }
-
-    public int obterY() {
-        return getCoordenadaY();
-    }
-
-    public void establecerRadio(double valorRadio) {
-
-        setRadio(valorRadio < LIMITERADIO ? LIMITERADIO : valorRadio);
+        radio = (valorRadio < MINIMO ? MINIMO : valorRadio);
     }
     public static final double LIMITERADIO = MINIMO;
-
-    public double obterRadio() {
-        return getRadio();
-    }
 
     public double obterDiametro() {
         return getRadio() * 2;
@@ -105,7 +83,7 @@ public class Aro {
         return "Centro = [" + getCoordenadaX() + "," + getCoordenadaY() + "]; Radio = " + getRadio();
     }
 
-    public void trasladarCentro(int trasladarX, int trasladarY){
+    public void trasladarCentro(int trasladarX, int trasladarY) {
         setCoordenadaX(getCoordenadaX() + trasladarX);
         setCoordenadaY(getCoordenadaY() + trasladarY);
     }
